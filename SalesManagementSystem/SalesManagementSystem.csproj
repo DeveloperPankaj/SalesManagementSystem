@@ -58,6 +58,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -66,9 +67,63 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminLogin\2AdminHome.png" />
+    <Content Include="AdminLogin\3ManagerManagement.png" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\landing-page.css" />
+    <Content Include="Content\signin.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\intro-bg.jpg" />
+    <Content Include="Images\lib.jpeg" />
+    <Content Include="Login.aspx" />
+    <Content Include="ManagerLogin\4ManagerHome.png" />
+    <Content Include="ManagerLogin\5SalesManagement.png" />
+    <Content Include="ManagerLogin\6SalesAnnouncement.png" />
+    <Content Include="SalesLogin\10ProposalsManagement.png" />
+    <Content Include="SalesLogin\7SalesHome.png" />
+    <Content Include="SalesLogin\8OpportunityType.png" />
+    <Content Include="SalesLogin\9OpportunityManagement.png" />
+    <Content Include="SalesLogin\Announcement.png" />
+    <Content Include="SalesLogin\Project.png" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\bookvalidation.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\dashboard-validation.js" />
+    <Content Include="MainMaster.Master" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.11.2.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="Web.config" />
+    <Content Include="_Common Login.png" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainMaster.Master.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainMaster.Master.designer.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
