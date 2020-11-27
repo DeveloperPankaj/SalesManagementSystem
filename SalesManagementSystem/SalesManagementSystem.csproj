@@ -74,6 +74,8 @@
     <Content Include="Content\landing-page.css" />
     <Content Include="Content\signin.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CreateSales.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="Images\intro-bg.jpg" />
     <Content Include="Images\lib.jpeg" />
     <Content Include="Login.aspx" />
@@ -110,6 +112,20 @@
     <Content Include="_Common Login.png" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateSales.aspx.cs">
+      <DependentUpon>CreateSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateSales.aspx.designer.cs">
+      <DependentUpon>CreateSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

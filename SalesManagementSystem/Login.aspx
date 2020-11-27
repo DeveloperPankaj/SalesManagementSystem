@@ -25,7 +25,7 @@
             <input type="text" id="inputEmail" class="form-control" placeholder="User Name" runat="server" required autofocus />
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" runat="server" required autofocus />
-            <asp:Button runat="server" CssClass="btn btn-lg btn-success btn-block" Text="Sign In" ID="btnLogin" />
+            <asp:Button runat="server" CssClass="btn btn-lg btn-success btn-block" Text="Sign In" ID="btnLogin" OnClick="btnLogin_Click" />
         </form>
     </div>
 </body>
