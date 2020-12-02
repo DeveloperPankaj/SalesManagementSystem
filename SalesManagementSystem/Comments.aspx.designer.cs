@@ -11,7 +11,7 @@ namespace SalesManagementSystem
 {
 
 
-    public partial class CreateSales
+    public partial class Comments
     {
 
         /// <summary>

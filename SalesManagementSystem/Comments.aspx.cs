@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Configuration;
-using System.Data.SqlClient;
 
 namespace SalesManagementSystem
 {
-    public partial class CreateSales : System.Web.UI.Page
+    public partial class Comments : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["UserId"] ==null)
+            if(Session["Userid"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
-
-            LibraryDb.SelectCommand = "select * from users_table where role='Sales' and CreatedUserId='" + Session["UserId"].ToString() + "'";
+            LibraryDb.SelectCommand = "Select Id,Message,convert(nvarchar, Datetime, 121) as Datetime,CreatedUserId from [Announcement_table] where [CreatedUserId]='"+Session["UserId"].ToString()+"'";
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
@@ -26,10 +25,9 @@ namespace SalesManagementSystem
             try
             {
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SalesConnectionString"].ConnectionString);
-                SqlCommand cmd = new SqlCommand("insert into users_table (UserName,Pwd,Role,CreatedUserId) values (@name,@pwd,@role,@lUserId)", connection);
+                SqlCommand cmd = new SqlCommand("insert into Announcement_table (Message,datetime,CreatedUserId) values (@name,@datetime,@lUserId)", connection);
                 cmd.Parameters.AddWithValue("@name", txtStudentId.Text);
-                cmd.Parameters.AddWithValue("@pwd", txtStudentName.Text);
-                cmd.Parameters.AddWithValue("@role", "Sales");
+                cmd.Parameters.AddWithValue("@datetime", txtStudentName.Text);
                 cmd.Parameters.AddWithValue("@lUserId", Session["UserId"].ToString());
 
                 try
@@ -40,10 +38,11 @@ namespace SalesManagementSystem
                     txtStudentId.Text = "";
                     txtStudentName.Text = "";
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
 
-                }finally
+                }
+                finally
                 {
                     connection.Close();
                 }

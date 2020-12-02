@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainMaster.Master" AutoEventWireup="true" CodeBehind="CreateSales.aspx.cs" Inherits="SalesManagementSystem.CreateSales" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainMaster.Master" AutoEventWireup="true" CodeBehind="Comments.aspx.cs" Inherits="SalesManagementSystem.Comments" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
+     <style>
         .myddls {
             align-items: center;
             background-color: rgb(255, 255, 255);
@@ -78,58 +78,60 @@
 
             <div class="input-group">
                 <div class="form-inline">
-                    <h3 class="alert alert-info">Sales Management</h3> 
+                    <h3 class="alert alert-info">Sales Announcement Management</h3>
                     <table border="0" cellpadding="5" cellspacing="5" class="table bg-success">
                         <tr>
                             <td>
-                                <span>User Name</span>
+                                <span>Announcement</span>
                             </td>
                             <td>
-                                <span>Password</span>
+                                <span>Date</span>
                             </td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:TextBox runat="server" ID="txtStudentId" CssClass="form-control" placeholder="User Name" required />
+                                <asp:TextBox TextMode="MultiLine" runat="server" ID="txtStudentId" CssClass="form-control" placeholder="Enter Annoncement" />
                             </td>
                             <td>
-                                <asp:TextBox runat="server" ID="txtStudentName" CssClass="form-control" placeholder="Password" required />
+                                <asp:TextBox runat="server" ID="txtStudentName" CssClass="form-control" placeholder="eg: 2020/01/12" />
                             </td>
                             <td>
-                                <asp:Button Text="Add User" runat="server" ID="btnAdd" CssClass="btn btn-sm btn-primary" OnClick="btnAdd_Click" />
+                                <asp:Button Text="Publish Announcement" runat="server" ID="btnAdd" CssClass="btn btn-sm btn-primary" OnClick="btnAdd_Click" />
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
-            <br />
-            <br />
-            <asp:GridView ID="GridView1" runat="server" CssClass="table table-responsive table-striped" AutoGenerateColumns="False" 
-                DataKeyNames="UserId" DataSourceID="LibraryDb">
-                <Columns>
-                    <asp:BoundField DataField="UserId" HeaderText="UserId" SortExpression="UserId" ReadOnly="True" InsertVisible="False" Visible="False" />
-                    <asp:BoundField DataField="UserName" HeaderText="User Name" SortExpression="UserName" />
-                    <asp:BoundField DataField="Pwd" HeaderText="Password" SortExpression="Pwd" />
-                   <asp:CommandField  ShowEditButton="True" />
-                </Columns>
-            </asp:GridView>
-             <asp:SqlDataSource ID="LibraryDb" runat="server" ConnectionString="<%$ ConnectionStrings:SalesConnectionString %>" 
-                DeleteCommand="DELETE FROM [Users_Table] WHERE [UserId] = @UserId" 
-                UpdateCommand="UPDATE [Users_Table] SET [UserName] = @UserName, [Pwd] = @Pwd  WHERE [UserId] = @UserId">
+        </div>
+        <br />
+        <br />
+    </center>
+    <asp:GridView ID="GridView1" runat="server" CssClass="table table-responsive table-striped" AutoGenerateColumns="False" DataKeyNames="id" DataSourceID="LibraryDB">
+        <Columns>
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+            <asp:BoundField DataField="id" HeaderText="id" SortExpression="id" ReadOnly="True" Visible="False" InsertVisible="False" />
+            <asp:BoundField DataField="Message" HeaderText="Message" SortExpression="Message" />
+            <asp:BoundField DataField="datetime" HeaderText="Date" ReadOnly="True" SortExpression="Message" />
+            <asp:BoundField DataField="CreatedUserId" HeaderText="CreatedUserId" SortExpression="CreatedUserId" Visible="False" />
+        </Columns>
+    </asp:GridView>
+    <asp:SqlDataSource ID="LibraryDb" runat="server" ConnectionString="<%$ ConnectionStrings:SalesConnectionString %>" 
+                DeleteCommand="DELETE FROM [Announcement_table] WHERE [id] = @id" 
+                UpdateCommand="UPDATE [Announcement_table] SET [Message] = @Message WHERE [id] = @id">
                 <DeleteParameters>
-                    <asp:Parameter Name="UserId" Type="Int32" />
+                    <asp:Parameter Name="id" Type="Int32" />
                 </DeleteParameters>
                 <InsertParameters>
-                    <asp:Parameter Name="UserName" Type="String" />
-                    <asp:Parameter Name="Pwd" Type="String" />
+                    <asp:Parameter Name="Message" Type="String" />
+                   <%-- <asp:Parameter Name="datetime" Type="Date" />--%>
+                    <asp:Parameter Name="CreatedUserId" Type="Int32" />
                 </InsertParameters>
                 <UpdateParameters>
-                    <asp:Parameter Name="UserName" Type="String" />
-                    <asp:Parameter Name="Pwd" Type="String" />
-                    <asp:Parameter Name="UserId" Type="Int32" />
+                    <asp:Parameter Name="Message" Type="String" />
+                   <%-- <asp:Parameter Name="datetime" Type="Date" />--%>
+                    <asp:Parameter Name="CreatedUserId" Type="Int32" />
+                    <asp:Parameter Name="id" Type="Int32" />
                 </UpdateParameters>
-            </asp:SqlDataSource>          
-        </div>
-    </center>
-</asp:Content>
+            </asp:SqlDataSource>    
+ </asp:Content>
