@@ -60,6 +60,10 @@
   <ItemGroup>
     <Content Include="Comments.aspx" />
     <Content Include="CreateClient.aspx" />
+    <Content Include="CreateManager.aspx" />
+    <Content Include="OppType.aspx" />
+    <Content Include="Projects.aspx" />
+    <Content Include="Proposals.aspx" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -128,6 +132,13 @@
     <Compile Include="CreateClient.aspx.designer.cs">
       <DependentUpon>CreateClient.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreateManager.aspx.cs">
+      <DependentUpon>CreateManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateManager.aspx.designer.cs">
+      <DependentUpon>CreateManager.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateSales.aspx.cs">
       <DependentUpon>CreateSales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -156,7 +167,28 @@
     <Compile Include="MainMaster.Master.designer.cs">
       <DependentUpon>MainMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="OppType.aspx.cs">
+      <DependentUpon>OppType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OppType.aspx.designer.cs">
+      <DependentUpon>OppType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proposals.aspx.cs">
+      <DependentUpon>Proposals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Proposals.aspx.designer.cs">
+      <DependentUpon>Proposals.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

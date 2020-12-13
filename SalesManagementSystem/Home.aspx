@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                  <%--  <marquee><h2><%= Announcements.ToString() %></h2></marquee>--%>
+                    <marquee><h2><%= Announcements.ToString() %></h2></marquee>
                     <div class="intro-message">
                         <h1>Hello <%= Session["username"].ToString() %></h1>
                         <h3>Welcome to Sales Management</h3>
